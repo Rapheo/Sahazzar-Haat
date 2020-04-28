@@ -14,10 +14,6 @@
  	text-decoration: none;
  }
 
- a.botns:hover{
- 	opacity: 0.7;
- 	width: 100%;
- }
  *{
  	-moz-box-sizing: border-box; 
  	-webkit-box-sizing: border-box; 
@@ -28,7 +24,7 @@
  	font-family: Source Sans Pro,sans-serif;
  }
  #bodybg{
- 	background-color: #18181a;
+ 	background-color: #1e1e1e;
  	overflow: scroll;
  }
 
@@ -40,9 +36,7 @@
  	height: 80px;
  	border: 1px solid #000005;
  }
- div#container {
- 	position: relative;
- }
+
  div#container2 {
  	position: relative;
  	top: 60px;
@@ -61,6 +55,7 @@
  	margin-right: auto;
  	margin-left: auto;
  	padding: 35px 15px 5px 15px;
+ 	overflow: auto;
  }
  .logo-written{
  	float: left;
@@ -120,24 +115,32 @@
  }
 
  /********** Desktop devices only **********/
- @media (min-width: 1108px) {
- 	.col-lg-4 {
+ @media (min-width: 992px) {
+ 	.col-lg-4, .col-lg-12  {
  		float: left;
- 		border: 1px solid black;
- 		background-color: gray;
+ 		border: 1px solid #32373b;
+ 		background-color: #202429;
  		margin: auto;
+ 		margin-bottom: 50px;
+ 		padding-bottom: 50px; 
  	}
  	.col-lg-4 {
  		width: calc(33.33% - 10px);
  	}
+ 	.col-lg-12 {
+ 		width: calc(100% - 10px);
+ 	}
+
  }
 
  /********** Tablet devices only **********/
- @media (min-width: 768px) and (max-width: 1107px) {
+ @media (min-width: 768px) and (max-width: 991px) {
  	.col-md-3, .col-md-12 {
  		float: left;
- 		border: 1px solid black;
- 		background-color: gray;
+ 		border: 1px solid #212426;
+ 		background-color: #202429;
+ 		padding-bottom: 50px;
+ 		margin-bottom: 50px; 
  	}
 
  	.col-md-3 {
@@ -153,8 +156,10 @@
  @media (max-width: 767px) {
  	.col-sd-12 {
  		float: left;
- 		border: 1px solid black;
- 		background-color: gray;
+ 		border: 1px solid #212426;
+ 		background-color: #202429;
+ 		padding-bottom: 50px; 
+ 		margin-bottom: 50px;
  	}
 
  	.col-sd-12 {
@@ -162,7 +167,7 @@
  	}
  }
 
- /**************handel**************/
+ /**************Scrollbar**************/
 
  .list::-webkit-scrollbar {
  	-webkit-appearance: scrollbartrack-vertical;
@@ -184,6 +189,110 @@
  ::-webkit-scrollbar-thumb:hover {
  	background: #333; 
  }
- #main{
- 	overflow: scroll;
+ /**********table*********/
+ table {
+ 	font-family: arial, sans-serif;
+ 	border-collapse: collapse;
+ 	width: 100%;
+ }
+
+ td, th {
+ 	border: 1px solid #485159;
+ 	text-align: left;
+ 	padding: 8px;
+ }
+
+ tr:nth-child(even) {
+ 	background-color: #3e4245;
+ }
+ tr.other:hover{
+ 	opacity: 0.899999;
+ }
+
+ /************not sure menu***************/
+ body,html{
+ 	margin:0;
+ 	padding: 0;
+ }
+
+ nav ul{
+ 	list-style: none;
+ 	padding:0;
+ 	background:#444;
+ }
+
+ nav ul li a{
+ 	color:#ddd;
+ 	text-decoration: none;
+ 	padding: .8rem 1rem;
+ 	display: block;
+ 	line-height: 1;
+ }
+ nav ul li{
+ 	border-bottom: 1px dotted #ddd;
+ }
+ /*styling logo*/
+
+
+ nav div:first-child h1{
+ 	line-height: 0;
+ 	padding: .8rem 0rem;
+ 	text-align: center;
+ }
+
+ nav div:first-child h1, nav ul{
+ 	margin:0;
+ }
+
+ /*Styling for larger devices*/
+
+ @media only screen and (min-width: 30em){
+ 	nav{
+ 		display: flex;
+ 		justify-content: space-between;
+ 		background: #414d62;
+ 		align-items: center;
+ 	}
+
+ 	nav ul{
+ 		display: flex;
+ 		align-items: center;
+ 		background:none;
+ 		flex-wrap: wrap;
+ 	}
+ 	nav div:first-child h1{
+ 		padding: 0;
+ 		margin:0;
+ 	}
+ 	nav div:first-child img{
+ 		height: 45px;
+
+ 	}
+ 	nav ul li{
+ 		border-bottom:none;
+ 		flex: 1 0 auto;
+ 		position: relative;
+ 	}
+ 	nav ul li a{
+ 		padding:1.2rem 1rem;
+ 	}
+ 	nav ul li a::before, nav ul li a::after{
+ 		content: "";
+ 		position: absolute;
+ 		bottom:0;
+ 		right: 0;
+ 		width:0%;
+ 		height: 2px;
+ 		background:red;
+ 		transition: .2s width ease-in-out;
+ 	}
+
+ 	nav ul li a::before{
+ 		left:0;
+ 	}
+
+ 	nav ul li a:hover::after,nav ul li a:hover::before{
+ 		width: 50%;
+ 	} 
+
  }
